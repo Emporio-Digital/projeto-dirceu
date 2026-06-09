@@ -204,14 +204,32 @@
         .faq-item.active .faq-body { padding-bottom: 25px; max-height: 200px; }
         .faq-item.active .faq-header i { transform: rotate(180deg); transition: 0.3s; }
 
-        /* --- FOOTER --- */
-        footer { background: var(--primary); color: #94a3b8; padding: 80px 0 25px; }
-        .footer-logo { font-size: 2rem; color: white; font-weight: 800; margin-bottom: 20px; display: block; font-family: 'Sora', sans-serif;}
-        .footer-logo span { color: var(--accent); }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 50px; margin-bottom: 30px; }
-        .footer-col h4 { color: white; margin-bottom: 25px; font-size: 1.2rem; }
-        .footer-col a { color: #94a3b8; display: block; margin-bottom: 12px; transition: 0.3s; }
-        .footer-col a:hover { color: var(--accent); padding-left: 5px; }
+        /* --- AJUSTE DE ESPAÇAMENTO RODAPÉ --- */
+        footer { 
+            background: var(--primary); 
+            color: #94a3b8; 
+            padding: 40px 0 20px; /* Reduzido de 80px para 40px */
+        }
+        .footer-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; /* Espaço entre colunas reduzido */
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+            padding-bottom: 30px; 
+            margin-bottom: 20px; 
+        }
+        .footer-col h4 { 
+            color: white; 
+            margin-bottom: 12px; /* Reduzido de 25px para 12px */
+            font-size: 1.2rem; 
+        }
+        .footer-col a { 
+            color: #94a3b8; 
+            display: block; 
+            margin-bottom: 8px; /* Reduzido de 12px para 8px */
+            transition: 0.3s; 
+        }
+        .footer-col a:hover { color: var(--accent); }
 
         /* --- ZAP FLUTUANTE --- */
         .whatsapp-float {
@@ -268,14 +286,128 @@
             
             .img-float { width: 60%; bottom: -20px; }
         }
+
+        /* --- ESTILO SESSÃO SEO MONSTRO --- */
+        .seo-section { background: #f1f5f9; padding: 60px 0; border-top: 1px solid #e2e8f0; }
+        .seo-city-box { background: var(--white); border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); overflow: hidden; }
+        
+        .seo-city-header { 
+            padding: 25px 30px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+            background: var(--white); transition: 0.3s;
+        }
+        .seo-city-header:hover { background: #f8fafc; }
+        .seo-city-header h2 { font-size: 1.5rem; margin: 0; color: var(--primary); }
+        .seo-city-header i { font-size: 1.2rem; color: var(--accent); transition: 0.4s; }
+
+        .seo-city-content { 
+            max-height: 0; overflow: hidden; transition: all 0.5s cubic-bezier(0, 1, 0, 1); 
+            padding: 0 30px;
+        }
+        .seo-city-box.active .seo-city-content { max-height: 5000px; transition: all 0.5s ease-in; padding-bottom: 40px; }
+        .seo-city-box.active .seo-city-header i { transform: rotate(180deg); }
+
+        .seo-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 20px; }
+        .seo-item h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 10px; border-left: 4px solid var(--accent); padding-left: 15px; }
+        .seo-item p { font-size: 0.95rem; color: var(--text-body); line-height: 1.7; text-align: justify; }
+        
+        @media (min-width: 768px) { .seo-grid { grid-template-columns: 1fr 1fr; } }
     </style>
+
+<!-- JSON-LD SCHEMA (CÉREBRO DO SEO LOCAL) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Dirceu Despachante",
+      "image": "https://images.unsplash.com/photo-1617788138017-80ad40651399",
+      "@id": "https://www.google.com/maps?cid=13609802832261537482",
+      "url": "https://dirceudespachante.com.br",
+      "telephone": "+55-11-94751-2569",
+      "hasMap": "https://www.google.com/maps/place/Dirceu+Despachante/@-23.5711161,-46.5786193,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5dee5aff20cd:0xbce0a69ea5acdeca!8m2!3d-23.571121!4d-46.5760444!16s%2Fg%2F11x_c_ddg4",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Corumbaiba, 679",
+        "addressLocality": "Vila Oratório",
+        "addressRegion": "SP",
+        "postalCode": "03189-010",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -23.571121,
+        "longitude": -46.5760444
+      },
+      "areaServed": [
+        { "@type": "City", "name": "São Paulo" },
+        { "@type": "City", "name": "Osasco" },
+        { "@type": "City", "name": "Praia Grande" }
+      ],
+      "description": "Despachante em São Paulo especialista em Licenciamento 2026, Transferência de Veículos, Recursos de Multas, Bafômetro e Lei Seca. Atendimento 100% online e parcelamento em 12x.",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "12:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/dirceu.despachante"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços Despachante Dirceu",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Licenciamento de Veículo 2026",
+              "url": "https://dirceudespachante.com.br/#servicos"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Transferência de Veículo Online",
+              "url": "https://dirceudespachante.com.br/#servicos"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Recurso de Multa de Bafômetro e Lei Seca",
+              "url": "https://dirceudespachante.com.br/#servicos"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Regularização de CNH Suspensa",
+              "url": "https://dirceudespachante.com.br/#servicos"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
 </head>
 <body>
 
     <!-- NAV -->
     <header id="header">
         <div class="container navbar">
-            <a href="#" class="logo">Dirceu<span>Despachante</span></a>
+            <a href="#" class="logo" style="color: #ffffff !important;">Dirceu<span style="color: #fbbf24 !important;"> Despachante</span></a>
             
             <div class="menu-btn" id="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -283,230 +415,488 @@
 
             <nav class="nav-links" id="nav-menu">
                 <a href="#home">Início</a>
-                <a href="#services">Serviços</a>
-                <a href="#about">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#diferenciais">Diferenciais</a>
                 <a href="#faq">Dúvidas</a>
                 <a href="https://wa.me/5511947512569" class="btn btn-primary" style="margin-left: 10px;">
-                    <i class="fab fa-whatsapp"></i> Falar no Zap
+                    <i class="fab fa-whatsapp"></i> Falar com o Dirceu
                 </a>
             </nav>
         </div>
     </header>
 
-    <!-- HERO SECTION (A Nave) -->
+    <!-- HERO SECTION (SEO & CONVERSÃO) -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <span class="hero-badge"><i class="fas fa-star"></i> Excelência em Documentação</span>
-                <!-- TEXTO BRANCO FORTE -->
-                <h1>Dirija com liberdade. Sem burocracia.</h1>
-                <p>Regularize seu veículo com segurança e agilidade. Licenciamento, Transferência e Multas parceladas em até 12x no cartão.</p>
+                <span class="hero-badge"><i class="fas fa-check-circle"></i> Credenciado pelo Detran-SP</span>
+                <h1>Despachante em São Paulo: Documentação sem burocracia</h1>
+                <p>Regularize seu veículo, CNH ou multas de forma 100% online e segura. Receba seu documento digital direto no WhatsApp com parcelamento em até 12x.</p>
                 <div class="hero-btns">
                     <a href="https://wa.me/5511947512569" class="btn btn-primary">
-                        Solicitar Orçamento <i class="fas fa-arrow-right"></i>
+                        Quero Regularizar Agora <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="#services" class="btn btn-outline">
-                        Conhecer Serviços
+                    <a href="#servicos" class="btn btn-outline">
+                        Ver todos os serviços
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STATUS FLUTUANTE (Arrumado no Mobile) -->
-    <div class="container stats-container">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <i class="fas fa-bolt"></i>
-                <span class="stat-number">Rápido</span>
-                <span class="stat-label">Documento no dia</span>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-users"></i>
-                <span class="stat-number">+10k</span>
-                <span class="stat-label">Clientes Satisfeitos</span>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-shield-alt"></i>
-                <span class="stat-number">100%</span>
-                <span class="stat-label">Seguro e Oficial</span>
-            </div>
-        </div>
-    </div>
 
-    <!-- SERVIÇOS -->
-    <section class="section-padding" id="services">
+    <!-- SERVIÇOS (SEO & CONVERSÃO 2026) -->
+    <section class="section-padding" id="servicos">
         <div class="container">
             <div class="section-header">
-                <h2>O que resolvemos para você</h2>
-                <p>Deixe a papelada chata com a gente e aproveite seu tempo.</p>
+                <h2>Serviços de Despachante em São Paulo</h2>
             </div>
 
             <div class="services-grid">
-                <!-- Card 1 -->
+                <!-- Card 1: Licenciamento -->
                 <div class="service-card">
                     <div class="card-icon"><i class="fas fa-file-contract"></i></div>
-                    <h3>Licenciamento 2024</h3>
-                    <p style="margin-bottom: 20px;">Evite apreensões. Emitimos o seu licenciamento anual digital na hora.</p>
+                    <h3>Licenciamento 2026 SP</h3>
+                    <p style="margin-bottom: 20px;">Regularize o CRLV-e do seu veículo sem sair de casa. Liberação rápida do documento digital para circular tranquilo.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> Envio PDF no WhatsApp</li>
-                        <li><i class="fas fa-check-circle"></i> Impressão disponível</li>
+                        <li><i class="fas fa-check-circle"></i> Consulta de débitos grátis</li>
+                        <li><i class="fas fa-check-circle"></i> Envio do PDF pelo WhatsApp</li>
                     </ul>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Card 2: Transferência -->
                 <div class="service-card">
                     <div class="card-icon"><i class="fas fa-exchange-alt"></i></div>
-                    <h3>Transferência</h3>
-                    <p style="margin-bottom: 20px;">Comprou ou vendeu? Cuidamos de toda a documentação com segurança.</p>
+                    <h3>Transferência de Veículo</h3>
+                    <p style="margin-bottom: 20px;">Comprou ou vendeu um carro em São Paulo? Resolvemos a transferência de propriedade e emissão do ATPV-e.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> Emissão ATPV-e</li>
-                        <li><i class="fas fa-check-circle"></i> Comunicado de Venda</li>
+                        <li><i class="fas fa-check-circle"></i> Processo 100% digital</li>
+                        <li><i class="fas fa-check-circle"></i> Suporte total com a documentação</li>
                     </ul>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Card 3: CNH e Multas -->
                 <div class="service-card">
-                    <div class="card-icon"><i class="fas fa-hand-holding-usd"></i></div>
-                    <h3>Débitos e Multas</h3>
-                    <p style="margin-bottom: 20px;">Levantamento completo de débitos e parcelamento facilitado.</p>
+                    <div class="card-icon"><i class="fas fa-id-card"></i></div>
+                    <h3>CNH, Multas e IPVA</h3>
+                    <p style="margin-bottom: 20px;">Problemas com pontuação, IPVA atrasado ou multas? Regularizamos sua situação com parcelamento facilitado.</p>
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> IPVA Atrasado</li>
-                        <li><i class="fas fa-check-circle"></i> Parcelamento em 12x</li>
+                        <li><i class="fas fa-check-circle"></i> Defesa de CNH Suspensa</li>
+                        <li><i class="fas fa-check-circle"></i> Parcelamento em até 12x</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SOBRE A EMPRESA -->
-    <section class="section-padding about-section" id="about" style="background: white;">
+    <!-- SOBRE O DIRCEU (AUTORIDADE LOCAL) -->
+    <section class="section-padding about-section" id="sobre" style="background: white;">
         <div class="container">
             <div class="about-grid">
                 <div class="about-images">
-                    <!-- Imagem Escritório -->
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1469&auto=format&fit=crop" alt="Escritório" class="img-main">
-                    <!-- Imagem Chave -->
-                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop" alt="Carro na estrada" class="img-float" style="object-fit: cover; height: 200px;">
+                    <!-- Imagem Principal: Dirceu no Escritório -->
+                    <img src="dirceu-despachante-sp.jpg" alt="Dirceu Despachante em São Paulo" class="img-main">
+                    <!-- Imagem Flutuante: Detalhe de Atendimento -->
+                    <img src="atendimento-dirceu-despachante.jpg" alt="Atendimento Despachante Dirceu" class="img-float" style="object-fit: cover; height: 200px;">
                 </div>
                 
                 <div class="about-text">
-                    <span style="color: var(--accent); font-weight: 700; text-transform: uppercase;">Quem Somos</span>
-                    <h2>Eficiência e Confiança</h2>
-                    <p style="margin-bottom: 20px;">Não somos apenas um despachante, somos seus parceiros. Com anos de experiência, nossa missão é desmistificar a burocracia do trânsito brasileiro.</p>
-                    <p style="margin-bottom: 30px;">Temos acesso direto aos sistemas do Detran para garantir aprovação rápida.</p>
+                    <span style="color: var(--accent); font-weight: 700; text-transform: uppercase;">Experiência e Seriedade</span>
+                    <h2>O seu Despachante de confiança em São Paulo</h2>
+                    <p style="margin-bottom: 20px;">Com anos de atuação no mercado paulista, o <strong>Dirceu Despachante</strong> se especializou em descomplica a vida do motorista. Nosso foco é oferecer um serviço transparente, rápido e totalmente dentro da legalidade.</p>
+                    <p style="margin-bottom: 30px;">Entendemos que seu tempo é precioso. Por isso, utilizamos tecnologia de ponta para resolver pendências junto ao Detran-SP sem que você precise sair de casa ou enfrentar filas.</p>
                     
                     <ul class="check-list">
-                        <li><i class="fas fa-check"></i> Atendimento personalizado via WhatsApp</li>
-                        <li><i class="fas fa-check"></i> Profissionais especializados</li>
-                        <li><i class="fas fa-check"></i> Transparência nos valores</li>
+                        <li><i class="fas fa-check"></i> Credenciamento oficial e seguro</li>
+                        <li><i class="fas fa-check"></i> Especialista em regularização complexa</li>
+                        <li><i class="fas fa-check"></i> Suporte humanizado direto com quem entende</li>
                     </ul>
 
-                    <a href="https://wa.me/5511947512569" class="btn btn-primary" style="margin-top: 30px;">Falar com Especialista</a>
+                    <a href="https://wa.me/5511947512569" class="btn btn-primary" style="margin-top: 30px;">Falar direto com o Dirceu</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA PARCELAMENTO -->
-    <section class="cta-parallax">
+    <!-- CTA PARCELAMENTO (CONVERSÃO FOCO EM 2026) -->
+    <section id="diferenciais" class="cta-parallax">
         <div class="container">
-            <h2>O orçamento apertou?</h2>
-            <p style="font-size: 1.2rem; margin-top: 15px;">Não corra riscos. Parcelamos IPVA, Multas e Licenciamento no cartão de crédito.</p>
+            <h2>Parcelamento de Débitos em até 12x</h2>
+            <p style="font-size: 1.2rem; margin-top: 15px; max-width: 800px; margin-left: auto; margin-right: auto;">Não deixe sua dívida virar uma bola de neve. Regularizamos seu <strong>IPVA 2026, Licenciamento e Multas</strong> com as melhores taxas de São Paulo.</p>
             
             <div class="brands">
-                <i class="fab fa-cc-visa"></i>
-                <i class="fab fa-cc-mastercard"></i>
-                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-visa" title="Visa"></i>
+                <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                <i class="fab fa-cc-amex" title="Amex"></i>
+                <i class="fab fa-pix" title="Pix"></i>
             </div>
             
-            <a href="https://wa.me/5511947512569" class="btn btn-primary" style="background: white; color: var(--primary);">
-                Simular Parcelamento Agora
+            <p style="margin-bottom: 30px; font-weight: 600; color: var(--accent);">Liberação imediata do documento após a contratação!</p>
+
+            <a href="https://wa.me/5511947512569" class="btn btn-primary" style="background: var(--accent); color: var(--primary);">
+                <i class="fab fa-whatsapp"></i> Simular Parcelamento 2026
             </a>
         </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ (SEO & OBJEÇÕES) -->
     <section class="section-padding" id="faq">
         <div class="container">
             <div class="section-header">
-                <h2>Dúvidas Frequentes</h2>
+                <h2>Dúvidas sobre Despachante em São Paulo</h2>
             </div>
             
             <div style="max-width: 800px; margin: 0 auto;">
                 <div class="faq-item">
                     <div class="faq-header">
-                        Preciso ir até o escritório?
+                        Como fazer o Licenciamento 2026 SP online?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-body">
-                        <p>Não! Hoje, 95% dos nossos serviços são 100% online. Você envia fotos pelo WhatsApp e recebe o documento digital no celular.</p>
+                        <p>O processo é simples: você nos envia o número do Renavam pelo WhatsApp, fazemos a consulta de débitos e, após o pagamento (em até 12x), emitimos o seu CRLV-e digital no mesmo dia.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-header">
-                        Quanto tempo demora o Licenciamento?
+                        Quais documentos preciso para Transferência de Veículo?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-body">
-                        <p>Após a confirmação do pagamento e se não houver bloqueios judiciais, emitimos o documento geralmente no mesmo dia útil.</p>
+                        <p>Para veículos com o novo recibo digital (ATPV-e), tudo pode ser feito online. Precisamos do documento do veículo, CNH do comprador e vendedor e o laudo de vistoria cautelar aprovado.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-header">
-                        É seguro pagar online?
+                        O Dirceu Despachante é credenciado pelo Detran?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-body">
-                        <p>Totalmente. Somos uma empresa credenciada com CNPJ e escritório físico. Utilizamos plataformas de pagamento seguras e emitimos nota fiscal.</p>
+                        <p>Sim, somos despachantes oficiais credenciados pelo CRDD-SP. Isso garante que todo o seu processo seja feito dentro das normas legais do Senatran e Detran de São Paulo.</p>
                     </div>
                 </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        Como parcelar multas e IPVA atrasado em 12x?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-body">
+                        <p>Aceitamos as principais bandeiras de cartão de crédito. Você pode parcelar o valor total de seus débitos em até 12 parcelas fixas, liberando o documento do carro imediatamente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <p>Ainda tem dúvidas? <strong>Chame o Dirceu agora.</strong></p>
+                <a href="https://wa.me/5511947512569" class="btn btn-primary" style="margin-top: 15px;">
+                    <i class="fab fa-whatsapp"></i> Tirar Dúvida no WhatsApp
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer id="contact">
+    <!-- SESSÃO SEO LOCAL MONSTRO -->
+    <section class="seo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="font-size: 2rem;">Consultoria Técnica e Regularização</h2>
+            </div>
+
+            <!-- BOX SÃO PAULO -->
+            <div class="seo-city-box" id="seo-sp">
+                <div class="seo-city-header" onclick="document.getElementById('seo-sp').classList.toggle('active')">
+                    <h2>Despachante em São Paulo</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="seo-city-content">
+                    <div class="seo-grid">
+                        
+                        <!-- Tópico 1 -->
+                        <div class="seo-item">
+                            <h3>Despachante em São Paulo para Licenciamento 2026</h3>
+                            <p>Se você busca por <strong>licenciamento de veículo</strong> em São Paulo, o Dirceu Despachante oferece a solução mais rápida do mercado. Em 2026, a regularização do CRLV-e digital exige agilidade para evitar multas e apreensões. Atendemos toda a capital paulista com emissão imediata do documento após o pagamento dos débitos pendentes no sistema do Detran-SP.</p>
+                        </div>
+
+                        <!-- Tópico 2 -->
+                        <div class="seo-item">
+                            <h3>Transferência de Veículos na Mooca e Região</h3>
+                            <p>Realizar a <strong>transferência de veículo na Mooca</strong> ficou muito mais simples com nosso suporte especializado. Cuidamos de todo o processo de emissão de ATPV-e e comunicação de venda, garantindo que a transferência de propriedade seja feita com total segurança jurídica, tanto para quem compra quanto para quem vende um automóvel na Zona Leste de SP.</p>
+                        </div>
+
+                        <!-- Tópico 3 -->
+                        <div class="seo-item">
+                            <h3>Contato Despachante em São Paulo para Lei Seca</h3>
+                            <p>Precisa de <strong>contato despachante</strong> urgente para lidar com multas de bafômetro? Nossa equipe é especialista em recursos administrativos para Lei Seca em São Paulo. Atuamos com defesas técnicas personalizadas para evitar a suspensão do seu direito de dirigir, analisando cada detalhe da autuação para garantir o melhor desfecho no seu processo.</p>
+                        </div>
+
+                        <!-- Tópico 4 -->
+                        <div class="seo-item">
+                            <h3>Regularização de CNH Suspensa no Tatuapé</h3>
+                            <p>Se você é morador do <strong>Tatuapé</strong> e está com a CNH suspensa ou cassada, o Dirceu Despachante é a sua referência. Atuamos na regularização de pontuação e processos de suspensão por infrações específicas, orientando o condutor em todas as etapas, desde o recurso até o curso de reciclagem, para que você recupere sua habilitação rapidamente.</p>
+                        </div>
+
+                        <!-- Tópico 5 -->
+                        <div class="seo-item">
+                            <h3>Licenciamento de Veículo na Vila Prudente</h3>
+                            <p>O serviço de <strong>licenciamento de veículo na Vila Prudente</strong> oferecido pelo nosso escritório foca na comodidade total. Você não precisa enfrentar filas no Poupatempo; resolvemos tudo via WhatsApp. Em poucos minutos, fazemos o levantamento de IPVA, multas e taxa de licenciamento, enviando o documento digital pronto para impressão ou uso no celular.</p>
+                        </div>
+
+                        <!-- Tópico 6 -->
+                        <div class="seo-item">
+                            <h3>Despachante em Guarulhos para Documentação Veicular</h3>
+                            <p>Atendemos também clientes que procuram por <strong>despachante em Guarulhos</strong> e regiões limítrofes. Se você reside ou trabalha em Guarulhos e precisa regularizar um veículo registrado em São Paulo, nossa equipe agiliza o processo sem burocracia. Somos especialistas em casos de primeiro emplacamento e troca de placas Mercosul com agendamento rápido.</p>
+                        </div>
+
+                        <!-- Tópico 7 -->
+                        <div class="seo-item">
+                            <h3>Recurso de Multa de Bafômetro em São Paulo</h3>
+                            <p>A multa por recusa ou teste positivo no bafômetro em São Paulo possui penalidades severas em 2026. Como especialistas em <strong>Lei Seca</strong>, o Dirceu Despachante elabora defesas fundamentadas na legislação vigente do Contran, buscando anular erros formais nos autos de infração e protegendo o prontuário do motorista contra bloqueios indevidos.</p>
+                        </div>
+
+                        <!-- Tópico 8 -->
+                        <div class="seo-item">
+                            <h3>Como entrar em contato com Despachante no Tatuapé</h3>
+                            <p>Para quem busca o melhor <strong>contato despachante</strong> no bairro do Tatuapé, oferecemos atendimento humanizado e transparente. Diferente de plataformas automáticas, aqui você fala diretamente com especialistas que conhecem a rotina do Detran-SP, garantindo que seu problema com documentação atrasada seja resolvido com prioridade e preço justo.</p>
+                        </div>
+
+                        <!-- Tópico 9 -->
+                        <div class="seo-item">
+                            <h3>Regularização de Motor e Chassi em São Paulo</h3>
+                            <p>A <strong>regularização de motor</strong> ou remarcação de chassi em São Paulo é um processo técnico que exige conhecimento das normas do Senatran. O Dirceu Despachante auxilia na montagem do processo, encaminhamento para vistoria e atualização do cadastro do veículo, evitando que divergências na documentação desvalorizem ou bloqueiem seu bem.</p>
+                        </div>
+
+                        <!-- Tópico 10 -->
+                        <div class="seo-item">
+                            <h3>Emissão de Placa Mercosul na Vila Prudente e Mooca</h3>
+                            <p>Precisa trocar sua placa para o padrão <strong>Mercosul na Vila Prudente</strong> ou Mooca? Nós cuidamos de toda a parte documental para a autorização de estampagem. Seja por motivo de transferência, furto ou placa danificada, garantimos que seu veículo esteja adequado às novas normas de trânsito de forma rápida e segura.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOX OSASCO -->
+            <div class="seo-city-box" id="seo-osasco">
+                <div class="seo-city-header" onclick="document.getElementById('seo-osasco').classList.toggle('active')">
+                    <h2>Despachante em Osasco</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="seo-city-content">
+                    <div class="seo-grid">
+                        
+                        <!-- Tópico 1 -->
+                        <div class="seo-item">
+                            <h3>Despachante em Osasco para Licenciamento de Veículo 2026</h3>
+                            <p>Procurando por <strong>licenciamento de veículo</strong> em Osasco? O Dirceu Despachante agiliza todo o processo para você. Em 2026, estar com o CRLV-e em dia é fundamental para circular pelas marginais e rodovias da região. Resolvemos pendências de licenciamento anual com rapidez, garantindo que o documento digital seja emitido sem que você precise sair de casa.</p>
+                        </div>
+
+                        <!-- Tópico 2 -->
+                        <div class="seo-item">
+                            <h3>Contato Despachante em Osasco para Transferência</h3>
+                            <p>Se você precisa de <strong>contato despachante</strong> em Osasco para realizar a transferência de um carro ou moto, nossa equipe está pronta para atender. Facilitamos a emissão do ATPV-e e cuidamos de toda a burocracia documental junto ao Detran. Atendemos moradores de todos os bairros de Osasco, garantindo segurança jurídica na compra e venda do seu veículo.</p>
+                        </div>
+
+                        <!-- Tópico 3 -->
+                        <div class="seo-item">
+                            <h3>Recurso de Multa de Bafômetro em Osasco</h3>
+                            <p>Foi autuado em uma blitz da <strong>Lei Seca</strong> em Osasco? Não entre em pânico. O Dirceu Despachante é especialista em recursos de bafômetro e suspensão de CNH na região metropolitana. Analisamos o auto de infração em busca de nulidades e preparamos uma defesa técnica robusta para proteger o seu direito de dirigir em 2026.</p>
+                        </div>
+
+                        <!-- Tópico 4 -->
+                        <div class="seo-item">
+                            <h3>Licenciamento de Veículo com IPVA Atrasado em Osasco</h3>
+                            <p>Muitos motoristas em Osasco enfrentam dificuldades com o <strong>licenciamento de veículo</strong> devido a débitos acumulados. Nós oferecemos uma solução exclusiva: parcelamos todo o seu IPVA, multas e taxas em até 12x no cartão de crédito. Assim, você regulariza seu documento imediatamente e volta a circular com segurança pelas ruas de Osasco e Carapicuíba.</p>
+                        </div>
+
+                        <!-- Tópico 5 -->
+                        <div class="seo-item">
+                            <h3>Regularização de CNH Suspensa em Osasco e Barueri</h3>
+                            <p>Está com a <strong>CNH suspensa</strong> por excesso de pontos ou infração mandatória em Osasco? O Dirceu Despachante possui vasta experiência em processos de regularização de prontuário. Atendemos motoristas de Osasco e Barueri, orientando desde a entrega da carteira até a realização do curso de reciclagem, garantindo o desbloqueio rápido da habilitação.</p>
+                        </div>
+
+                        <!-- Tópico 6 -->
+                        <div class="seo-item">
+                            <h3>Despachante em Osasco para Placa Mercosul</h3>
+                            <p>Se você adquiriu um veículo novo ou precisa trocar a placa para o padrão <strong>Mercosul em Osasco</strong>, nós cuidamos de toda a autorização digital. O processo é rápido e evita que você caia em vistorias reprovadas. Atuamos com eficiência para que o emplacamento do seu veículo em Osasco seja concluído dentro das normas vigentes do Contran em 2026.</p>
+                        </div>
+
+                        <!-- Tópico 7 -->
+                        <div class="seo-item">
+                            <h3>Como entrar em contato com Despachante em Osasco</h3>
+                            <p>Achar um <strong>contato despachante</strong> de confiança em Osasco pode ser um desafio. No escritório do Dirceu, priorizamos a transparência e o atendimento direto via WhatsApp. Resolvemos desde casos simples de licenciamento até situações complexas de bloqueios administrativos, sempre com foco na agilidade que o motorista de Osasco precisa.</p>
+                        </div>
+
+                        <!-- Tópico 8 -->
+                        <div class="seo-item">
+                            <h3>Defesa de Lei Seca e Recusa de Bafômetro em Osasco</h3>
+                            <p>A recusa ao teste do <strong>bafômetro</strong> em Osasco gera as mesmas penalidades que o teste positivo. Por isso, contar com um despachante especialista em Lei Seca é essencial. Trabalhamos com recursos administrativos fundamentados, visando anular as penalidades de suspensão por 12 meses, protegendo sua carreira e sua mobilidade em 2026.</p>
+                        </div>
+
+                        <!-- Tópico 9 -->
+                        <div class="seo-item">
+                            <h3>Primeiro Emplacamento de Veículos em Osasco</h3>
+                            <p>Comprou um carro zero km em uma concessionária de Osasco? O Dirceu Despachante realiza o <strong>primeiro emplacamento</strong> com total agilidade. Cuidamos da nota fiscal, cadastro na base de dados do Detran-SP e emissão do primeiro documento (CRLV-e), garantindo que você saia da loja com tudo regularizado e pronto para rodar.</p>
+                        </div>
+
+                        <!-- Tópico 10 -->
+                        <div class="seo-item">
+                            <h3>Despachante Online para motoristas de Osasco</h3>
+                            <p>A tecnologia permite que o Dirceu seja o seu <strong>despachante em Osasco</strong> de forma 100% online. Não importa se você está no Centro, no Bela Vista ou em Quitaúna; você envia a documentação por foto e nós resolvemos tudo digitalmente. É a modernidade a serviço da regularização veicular, com a confiança de quem conhece Osasco.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOX PRAIA GRANDE -->
+            <div class="seo-city-box" id="seo-pg">
+                <div class="seo-city-header" onclick="document.getElementById('seo-pg').classList.toggle('active')">
+                    <h2>Despachante em Praia Grande</h2>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="seo-city-content">
+                    <div class="seo-grid">
+                        
+                        <!-- Tópico 1 -->
+                        <div class="seo-item">
+                            <h3>Despachante em Praia Grande para Licenciamento 2026</h3>
+                            <p>Se você precisa de <strong>licenciamento de veículo</strong> em Praia Grande, o Dirceu Despachante oferece um atendimento ágil e totalmente digital. Em 2026, motoristas da Baixada Santista podem regularizar o CRLV-e sem precisar subir a serra. Resolvemos todos os débitos pendentes e emitimos o licenciamento anual direto no seu WhatsApp com total comodidade.</p>
+                        </div>
+
+                        <!-- Tópico 2 -->
+                        <div class="seo-item">
+                            <h3>Contato Despachante em Praia Grande e Baixada Santista</h3>
+                            <p>Procurando pelo melhor <strong>contato despachante</strong> em Praia Grande? Nossa equipe atende toda a região, desde o Canto do Forte até o Solemar. Facilitamos o contato via celular para que você tire suas dúvidas sobre documentação veicular, transferências e taxas do Detran-SP sem burocracia e com a confiança de um despachante credenciado.</p>
+                        </div>
+
+                        <!-- Tópico 3 -->
+                        <div class="seo-item">
+                            <h3>Recurso de Lei Seca e Bafômetro em Praia Grande</h3>
+                            <p>As blitze da <strong>Lei Seca</strong> são frequentes no litoral paulista. Se você foi parado e precisa de um especialista em recurso de bafômetro em Praia Grande, o Dirceu Despachante é sua melhor opção em 2026. Atuamos com defesas administrativas personalizadas para evitar a suspensão da CNH, garantindo que o condutor tenha o direito ao contraditório respeitado.</p>
+                        </div>
+
+                        <!-- Tópico 4 -->
+                        <div class="seo-item">
+                            <h3>Transferência de Veículo no Litoral - Praia Grande</h3>
+                            <p>Comprar ou vender um carro na Baixada exige atenção. Para <strong>transferência de veículo</strong> em Praia Grande, cuidamos da emissão da ATPV-e e de todos os formulários necessários. Seja para veículos de passeio ou utilitários, garantimos que a documentação seja atualizada rapidamente, evitando multas por atraso na transferência de propriedade em 2026.</p>
+                        </div>
+
+                        <!-- Tópico 5 -->
+                        <div class="seo-item">
+                            <h3>Regularização de CNH Suspensa em Praia Grande</h3>
+                            <p>Está com a <strong>CNH suspensa</strong> em Praia Grande por excesso de pontuação ou multas autossuspensivas? O Dirceu Despachante auxilia moradores de Praia Grande, Mongaguá e São Vicente no processo de desbloqueio da habilitação. Orientamos sobre os prazos de entrega e a realização do curso de reciclagem para que você volte a dirigir legalmente o quanto antes.</p>
+                        </div>
+
+                        <!-- Tópico 6 -->
+                        <div class="seo-item">
+                            <h3>Parcelamento de Débitos de Veículos em Praia Grande</h3>
+                            <p>O <strong>licenciamento de veículo</strong> em Praia Grande pode ser pesado no orçamento. Por isso, oferecemos o parcelamento de IPVA, multas e taxas em até 12 vezes no cartão de crédito. É a solução ideal para quem quer regularizar o carro em 2026 sem comprometer toda a renda, recebendo o documento atualizado de forma imediata.</p>
+                        </div>
+
+                        <!-- Tópico 7 -->
+                        <div class="seo-item">
+                            <h3>Como entrar em contato com Despachante na Baixada Santista</h3>
+                            <p>Para quem busca um <strong>contato despachante</strong> eficiente na Baixada Santista, o Dirceu Despachante é referência em agilidade. Atendemos Praia Grande e cidades vizinhas com suporte via internet, enviando toda a documentação digitalizada. É segurança e praticidade para quem vive no litoral e não quer perder tempo com papelada de trânsito.</p>
+                        </div>
+
+                        <!-- Tópico 8 -->
+                        <div class="seo-item">
+                            <h3>Emissão de Placas Mercosul em Praia Grande</h3>
+                            <p>Precisa de <strong>placa Mercosul</strong> em Praia Grande para seu carro novo ou após uma transferência? O Dirceu Despachante resolve a autorização para estampagem de forma rápida. Cuidamos do processo burocrático para que seu veículo esteja dentro das novas normas de trânsito, garantindo que a identificação visual do automóvel seja atualizada com facilidade.</p>
+                        </div>
+
+                        <!-- Tópico 9 -->
+                        <div class="seo-item">
+                            <h3>Defesa de Multa de Bafômetro no Litoral Sul</h3>
+                            <p>Especialista em legislação, o Dirceu Despachante oferece suporte para <strong>recurso de bafômetro</strong> em Praia Grande e Mongaguá. Se você foi autuado e acredita que houve erros no procedimento da blitz, nossa consultoria analisa o caso em 2026 para elaborar uma defesa técnica fundamentada nas resoluções do Contran, visando a proteção do seu prontuário.</p>
+                        </div>
+
+                        <!-- Tópico 10 -->
+                        <div class="seo-item">
+                            <h3>Despachante Online para Moradores de Praia Grande</h3>
+                            <p>Morar na praia não significa ter que enfrentar filas em SP ou no Poupatempo local. Como seu <strong>despachante em Praia Grande</strong> online, o Dirceu resolve tudo à distância. Você nos envia os dados do veículo, e nós cuidamos de toda a interação com o Detran-SP, garantindo rapidez, transparência e o documento oficial na palma da sua mão.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER PREMIUM COMPACTO -->
+    <footer id="contato">
         <div class="container">
             <div class="footer-grid">
+                
+                <!-- Coluna 1: Marca e Registro -->
                 <div class="footer-col">
-                    <a href="#" class="footer-logo">Dirceu<span>Despachante</span></a>
-                    <p>Simplificando a vida do motorista brasileiro com tecnologia e agilidade.</p>
-                    <p style="font-size: 0.85rem; margin-top: 15px; opacity: 0.8; line-height: 1.5;">
-                        Dirceu Nascimento da Silva<br>
-                        CRDD/SP nº 005953-6
-                    </p>
-                    <div style="margin-top: 20px; display: flex; gap: 15px;">
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" style="color: white; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="logo" style="font-size: 1.5rem; margin-bottom: 10px; display: block; color: #ffffff !important;">Dirceu<span style="color: #fbbf24 !important;"> Despachante</span></a>
+                    <p style="margin-bottom: 15px;">Soluções digitais para regularização veicular em SP com agilidade e transparência.</p>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; border-left: 3px solid var(--accent);">
+                        <p style="font-size: 0.8rem; color: #fff; margin: 0; font-weight: 600;">Dirceu Nascimento da Silva</p>
+                        <p style="font-size: 0.75rem; color: var(--accent); margin: 0;">CRDD/SP nº 005953-6</p>
+                    </div>
+                    <div style="margin-top: 15px; display: flex; gap: 10px;">
+                        <a href="https://www.instagram.com/dirceu.despachante" target="_blank" style="width: 35px; height: 35px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; transition: 0.3s;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5511947512569" target="_blank" style="width: 35px; height: 35px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; transition: 0.3s;">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
                 
+                <!-- Coluna 2: Links Rápidos -->
                 <div class="footer-col">
-                    <h4>Navegação</h4>
-                    <ul>
-                        <li><a href="#home">Início</a></li>
-                        <li><a href="#services">Serviços</a></li>
-                        <li><a href="#about">Sobre Nós</a></li>
-                        <li><a href="#faq">Ajuda</a></li>
+                    <h4>Serviços Online</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="#servicos" style="font-size: 0.9rem;"><i class="fas fa-chevron-right" style="font-size: 0.7rem; margin-right: 5px; color: var(--accent);"></i> Licenciamento 2026</a></li>
+                        <li><a href="#servicos" style="font-size: 0.9rem;"><i class="fas fa-chevron-right" style="font-size: 0.7rem; margin-right: 5px; color: var(--accent);"></i> Transferência Digital</a></li>
+                        <li><a href="#servicos" style="font-size: 0.9rem;"><i class="fas fa-chevron-right" style="font-size: 0.7rem; margin-right: 5px; color: var(--accent);"></i> Recurso de Lei Seca</a></li>
+                        <li><a href="#servicos" style="font-size: 0.9rem;"><i class="fas fa-chevron-right" style="font-size: 0.7rem; margin-right: 5px; color: var(--accent);"></i> Regularização de CNH</a></li>
                     </ul>
                 </div>
 
+                <!-- Coluna 3: Atendimento -->
                 <div class="footer-col">
-                    <h4>Contato</h4>
-                    <ul>
-                        <li><i class="fas fa-phone-alt" style="margin-right: 10px; color: var(--accent);"></i> (11) 94751-2569</li>
-                        <li><i class="fas fa-envelope" style="margin-right: 10px; color: var(--accent);"></i> dirceumooca007@gmail.com
-</li>
-                        <li><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--accent);"></i> R. Corumbaiba, 679<br><span style="margin-left: 25px;">Vila Oratório - SP</span></li>
+                    <h4>Atendimento</h4>
+                    <ul style="color: #94a3b8; font-size: 0.9rem; list-style: none;">
+                        <li><i class="fas fa-clock" style="color: var(--accent); margin-right: 8px;"></i><strong>Seg-Sex:</strong> 08h às 18h</li>
+                        <li><i class="fas fa-clock" style="color: var(--accent); margin-right: 8px;"></i><strong>Sáb:</strong> 08h às 12h</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--whatsapp); margin-right: 8px;"></i>Atendimento Online Zap</li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 4: Endereço -->
+                <div class="footer-col">
+                    <h4>Fale Conosco</h4>
+                    <ul style="font-size: 0.9rem; list-style: none;">
+                        <li><a href="tel:11947512569" style="display: flex; align-items: center; gap: 8px;"><i class="fas fa-phone-alt" style="color: var(--accent);"></i> (11) 94751-2569</a></li>
+                        <li><a href="mailto:dirceumooca007@gmail.com" style="display: flex; align-items: center; gap: 8px;"><i class="fas fa-envelope" style="color: var(--accent);"></i> dirceumooca007@gmail.com</a></li>
+                        <li style="line-height: 1.3;">
+                            <span style="display: flex; align-items: flex-start; gap: 8px;">
+                                <i class="fas fa-map-marker-alt" style="color: var(--accent); margin-top: 3px;"></i>
+                                R. Corumbaiba, 679 - Mooca/SP
+                            </span>
+                        </li>
                     </ul>
                 </div>
             </div>
             
-            <div style="text-align: center; font-size: 0.9rem; opacity: 0.7;">
-                &copy; 2026 Dirceu Despachante. Todos os direitos reservados.
+            <!-- Barra Inferior com Assinatura EG -->
+            <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center; font-size: 0.85rem;">
+                <div style="opacity: 0.8; margin-bottom: 10px;">
+                    &copy; <strong>Dirceu Despachante</strong>
+                </div>
+                <div style="opacity: 0.9;">
+                    Desenvolvido por 
+                    <a href="https://egemporiodigital.com.br/" target="_blank" style="color: var(--accent); font-weight: 700; text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s;" onmouseover="this.style.borderBottom='1px solid var(--accent)'" onmouseout="this.style.borderBottom='1px solid transparent'">
+                        EG Empório Digital
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
@@ -565,6 +955,12 @@
                 if (!isActive) item.classList.add('active');
             });
         });
+
+        // FORÇAR TOPO AO ATUALIZAR
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
     </script>
 </body>
 </html>
