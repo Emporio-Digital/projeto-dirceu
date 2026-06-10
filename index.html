@@ -3,14 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dirceu Despachante | Soluções Veiculares Premium</title>
+    <title>Dirceu Despachante | Despachante em São Paulo e Região</title>
+    <meta name="description" content="Dirceu Despachante em São Paulo: Especialista em Licenciamento 2026, Transferência e CNH. Atendimento 100% online, rápido e seguro com parcelamento em 12x.">
+    <link rel="canonical" href="https://dirceudespachante.com.br">
+
+    <!-- Configurações de Nome do Site (Google Site Name) e Social Media -->
+    <meta property="og:title" content="Dirceu Despachante | Documentação Veicular Online">
+    <meta property="og:description" content="Regularize seu veículo agora. Licenciamento 2026 e Transferência sem sair de casa.">
+    <!-- Favicon para a Aba do Navegador (Chrome, Edge, etc) -->
+    <link rel="icon" type="image/png" href="logo-dirceu.png">
+    <link rel="shortcut icon" href="logo-dirceu.png" type="image/x-icon">
     
-    <!-- Fontes Google (Sora para títulos e Inter para texto) -->
+    <!-- Ícone para Favoritos no iPhone/Android e Busca do Google -->
+    <link rel="apple-touch-icon" href="logo-dirceu.png">
+    
+    <!-- Imagem para redes sociais e miniatura do Google Search -->
+    <meta property="og:image" content="logo-dirceu.png">
+    <meta name="msapplication-TileImage" content="logo-dirceu.png">
+    <meta property="og:url" content="https://dirceudespachante.com.br">
+    <meta property="og:type" content="website">
+    <meta name="author" content="Dirceu Despachante">
+
+    
+    <!-- Fontes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Ícones (FontAwesome) -->
+    <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -85,14 +105,18 @@
 
         .navbar { display: flex; justify-content: space-between; align-items: center; }
 
-        .logo { font-size: 1.8rem; font-weight: 800; color: var(--white); text-shadow: 0 2px 5px rgba(0,0,0,0.3); }
-        .logo span { color: var(--accent); }
+        .logo { display: flex; align-items: center; gap: 15px; font-size: 1.8rem; font-weight: 800; text-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+        .logo img { height: 65px; width: auto; display: block; }
+        /* "Dirceu" em Branco */
+        .logo .text-white { color: var(--white) !important; }
+        /* "Despachante" em Laranja/Amarelo */
+        .logo .text-accent { color: var(--accent) !important; }
 
         .nav-links { display: flex; gap: 30px; align-items: center; }
         .nav-links a { color: var(--white); font-weight: 500; transition: 0.3s; font-size: 1rem; }
         .nav-links a:hover { color: var(--accent); }
 
-        .menu-btn { display: none; color: white; font-size: 1.8rem; cursor: pointer; }
+        .menu-btn { display: none; color: white; font-size: 1.8rem; cursor: pointer; z-index: 1100; }
 
         /* --- HERO SECTION (A NAVE) --- */
         .hero {
@@ -151,8 +175,16 @@
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
         .service-card {
-            background: var(--white); padding: 40px 30px; border-radius: 16px;
-            transition: 0.3s; border: 1px solid #f1f5f9; position: relative; overflow: hidden;
+            background: rgba(255, 255, 255, 0.15); /* Mais transparente */
+            backdrop-filter: blur(15px); /* Desfoque mais elegante */
+            -webkit-backdrop-filter: blur(15px);
+            padding: 40px 30px; 
+            border-radius: 16px;
+            transition: 0.3s; 
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Borda fina que brilha */
+            position: relative; 
+            overflow: hidden;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
         }
         
         .service-card:hover {
@@ -253,15 +285,51 @@
         }
 
         @media (max-width: 768px) {
-            /* AJUSTE MENU */
-            .nav-links {
-                position: fixed; top: 0; right: -100%; height: 100vh; width: 85%;
-                background: var(--white); flex-direction: column; justify-content: center;
-                box-shadow: -10px 0 30px rgba(0,0,0,0.2); transition: 0.4s; z-index: 1002;
+            .logo { font-size: 1.3rem; gap: 8px; }
+            .logo img { height: 55px; }
+
+            /* ÍCONE HAMBURGUER BRANCO NÍTIDO */
+            .menu-btn { 
+                display: block; 
+                position: relative; 
+                color: #ffffff !important; 
+                filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
             }
+
+            /* GAVETA LATERAL ELEGANTE */
+            .nav-links {
+                position: fixed; top: 0; right: -100%; height: 100vh; 
+                width: 75%; /* Não ocupa a tela toda */
+                background: rgba(15, 23, 42, 0.95); 
+                backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+                flex-direction: column; justify-content: flex-start; align-items: flex-start;
+                padding: 100px 40px; /* Espaçamento interno */
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+                z-index: 1050;
+                border-left: 1px solid rgba(255,255,255,0.1); /* Linha fina de brilho */
+            }
+
             .nav-links.active { right: 0; }
-            .nav-links a { color: var(--primary); font-size: 1.3rem; }
-            .menu-btn { display: block; }
+
+            /* LINKS NO MOBILE */
+            .nav-links a { 
+                color: var(--white) !important; 
+                font-size: 1.3rem; 
+                margin: 15px 0; 
+                font-weight: 600; 
+                width: 100%;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+                padding-bottom: 10px;
+            }
+
+            /* BOTÃO WHATSAPP DENTRO DO MENU */
+            .nav-links .btn-primary { 
+                margin-top: 20px; 
+                width: 100%; 
+                font-size: 0.9rem;
+                padding: 15px;
+            }
             
             /* AJUSTE HERO (TOPO) */
             .hero { 
@@ -311,94 +379,178 @@
         .seo-item p { font-size: 0.95rem; color: var(--text-body); line-height: 1.7; text-align: justify; }
         
         @media (min-width: 768px) { .seo-grid { grid-template-columns: 1fr 1fr; } }
+
+        /* Ajuste específico para os prints de avaliações */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 colunas no Windows */
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: 1fr; /* 1 coluna no Mobile */
+            }
+        }
+
+        /* Configurações Base da Sessão */
+        .services-section {
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* REGRA SÓ PARA WINDOWS (Acima de 768px) */
+        @media (min-width: 769px) {
+            .services-section {
+                background-attachment: fixed;
+                background-position: center center;
+                background-image: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)), url('fundo-servicos-desk.jpg');
+            }
+        }
+
+        /* REGRA SÓ PARA MOBILE (Até 768px) */
+        @media (max-width: 768px) {
+            .services-section {
+                background-attachment: scroll !important;
+                background-position: center top !important;
+                background-image: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)), url('fundo-servicos-mob.jpg') !important;
+            }
+        }
     </style>
 
-<!-- JSON-LD SCHEMA (CÉREBRO DO SEO LOCAL) -->
+    <!-- JSON-LD SCHEMA (CÉREBRO DO SEO LOCAL) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Dirceu Despachante",
-      "image": "https://images.unsplash.com/photo-1617788138017-80ad40651399",
-      "@id": "https://www.google.com/maps?cid=13609802832261537482",
-      "url": "https://dirceudespachante.com.br",
-      "telephone": "+55-11-94751-2569",
-      "hasMap": "https://www.google.com/maps/place/Dirceu+Despachante/@-23.5711161,-46.5786193,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5dee5aff20cd:0xbce0a69ea5acdeca!8m2!3d-23.571121!4d-46.5760444!16s%2Fg%2F11x_c_ddg4",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "R. Corumbaiba, 679",
-        "addressLocality": "Vila Oratório",
-        "addressRegion": "SP",
-        "postalCode": "03189-010",
-        "addressCountry": "BR"
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Dirceu Despachante",
+        "url": "https://dirceudespachante.com.br"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -23.571121,
-        "longitude": -46.5760444
-      },
-      "areaServed": [
-        { "@type": "City", "name": "São Paulo" },
-        { "@type": "City", "name": "Osasco" },
-        { "@type": "City", "name": "Praia Grande" }
-      ],
-      "description": "Despachante em São Paulo especialista em Licenciamento 2026, Transferência de Veículos, Recursos de Multas, Bafômetro e Lei Seca. Atendimento 100% online e parcelamento em 12x.",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "18:00"
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Dirceu Despachante",
+        "image": "https://images.unsplash.com/photo-1617788138017-80ad40651399",
+        "@id": "https://www.google.com/maps?cid=13609802832261537482",
+        "url": "https://dirceudespachante.com.br",
+        "telephone": "+55-11-94751-2569",
+        "hasMap": "https://www.google.com/maps/place/Dirceu+Despachante/@-23.5711161,-46.5786193,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce5dee5aff20cd:0xbce0a69ea5acdeca!8m2!3d-23.571121!4d-46.5760444!16s%2Fg%2F11x_c_ddg4",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Corumbaiba, 679",
+          "addressLocality": "Vila Oratório",
+          "addressRegion": "SP",
+          "postalCode": "03189-010",
+          "addressCountry": "BR"
         },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "08:00",
-          "closes": "12:00"
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -23.571121,
+          "longitude": -46.5760444
+        },
+        "areaServed": [
+          { "@type": "City", "name": "São Paulo" },
+          { "@type": "City", "name": "Osasco" },
+          { "@type": "City", "name": "Praia Grande" }
+        ],
+        "description": "Despachante em São Paulo especialista em Licenciamento 2026, Transferência de Veículos, Recursos de Multas, Bafômetro e Lei Seca. Atendimento 100% online e parcelamento em 12x.",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "08:00",
+            "closes": "12:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/dirceu.despachante"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços Despachante Dirceu",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Licenciamento de Veículo 2026",
+                "url": "https://dirceudespachante.com.br/#servicos"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Transferência de Veículo Online",
+                "url": "https://dirceudespachante.com.br/#servicos"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Recurso de Multa de Bafômetro e Lei Seca",
+                "url": "https://dirceudespachante.com.br/#servicos"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Regularização de CNH Suspensa",
+                "url": "https://dirceudespachante.com.br/#servicos"
+              }
+            }
+          ]
         }
-      ],
-      "sameAs": [
-        "https://www.instagram.com/dirceu.despachante"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Serviços Despachante Dirceu",
-        "itemListElement": [
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Licenciamento de Veículo 2026",
-              "url": "https://dirceudespachante.com.br/#servicos"
+            "@type": "Question",
+            "name": "Como fazer o Licenciamento 2026 SP online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O processo é simples: você nos envia o número do Renavam pelo WhatsApp, fazemos a consulta de débitos e, após o pagamento (em até 12x), emitimos o seu CRLV-e digital no mesmo dia."
             }
           },
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Transferência de Veículo Online",
-              "url": "https://dirceudespachante.com.br/#servicos"
+            "@type": "Question",
+            "name": "Quais documentos preciso para Transferência de Veículo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Para veículos com o novo recibo digital (ATPV-e), tudo pode ser feito online. Precisamos do documento do veículo, CNH do comprador e vendedor e o laudo de vistoria cautelar aprovado."
             }
           },
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Recurso de Multa de Bafômetro e Lei Seca",
-              "url": "https://dirceudespachante.com.br/#servicos"
+            "@type": "Question",
+            "name": "O Dirceu Despachante é credenciado pelo Detran?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim, somos despachantes oficiais credenciados pelo CRDD-SP. Isso garante que todo o seu processo seja feito dentro das normas legais do Senatran e Detran de São Paulo."
             }
           },
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Regularização de CNH Suspensa",
-              "url": "https://dirceudespachante.com.br/#servicos"
+            "@type": "Question",
+            "name": "Como parcelar multas e IPVA atrasado em 12x?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aceitamos as principais bandeiras de cartão de crédito. Você pode parcelar o valor total de seus débitos em até 12 parcelas fixas, liberando o documento do carro imediatamente."
             }
           }
         ]
       }
-    }
+    ]
     </script>
 
 </head>
@@ -407,7 +559,10 @@
     <!-- NAV -->
     <header id="header">
         <div class="container navbar">
-            <a href="#" class="logo" style="color: #ffffff !important;">Dirceu<span style="color: #fbbf24 !important;"> Despachante</span></a>
+            <a href="#" class="logo">
+                <img src="logo-dirceu.png" alt="Dirceu Despachante">
+                <span class="text-white">Dirceu <span class="text-accent">Despachante</span></span>
+            </a>
             
             <div class="menu-btn" id="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -418,7 +573,7 @@
                 <a href="#servicos">Serviços</a>
                 <a href="#diferenciais">Diferenciais</a>
                 <a href="#faq">Dúvidas</a>
-                <a href="https://wa.me/5511947512569" class="btn btn-primary" style="margin-left: 10px;">
+                <a href="https://wa.me/5511947512569?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20iniciar%20um%20atendimento." class="btn btn-primary">
                     <i class="fab fa-whatsapp"></i> Falar com o Dirceu
                 </a>
             </nav>
@@ -433,7 +588,7 @@
                 <h1>Despachante em São Paulo: Documentação sem burocracia</h1>
                 <p>Regularize seu veículo, CNH ou multas de forma 100% online e segura. Receba seu documento digital direto no WhatsApp com parcelamento em até 12x.</p>
                 <div class="hero-btns">
-                    <a href="https://wa.me/5511947512569" class="btn btn-primary">
+                    <a href="https://wa.me/5511947512569?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20iniciar%20um%20atendimento." class="btn btn-primary">
                         Quero Regularizar Agora <i class="fab fa-whatsapp"></i>
                     </a>
                     <a href="#servicos" class="btn btn-outline">
@@ -444,45 +599,56 @@
         </div>
     </section>
 
-
+    <!-- BARRA DE CONFIANÇA (LOGOS ÓRGÃOS) - AJUSTADA -->
+    <div style="background: #f1f5f9; padding: 30px 0; border-bottom: 1px solid #e2e8f0;">
+        <div class="container">
+            <p style="text-align: center; font-size: 0.75rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px;">Órgãos de Atuação e Credenciamento</p>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 45px; flex-wrap: wrap; opacity: 0.8; filter: grayscale(100%);">
+                <img src="logo-detran.png" alt="Detran SP" style="height: 50px; width: auto;">
+                <img src="logo-senatran.png" alt="Senatran" style="height: 45px; width: auto;">
+                <img src="logo-contran.png" alt="Contran" style="height: 50px; width: auto;">
+                <img src="logo-crdd.png" alt="CRDD SP" style="height: 60px; width: auto;">
+            </div>
+        </div>
+    </div>
+    
     <!-- SERVIÇOS (SEO & CONVERSÃO 2026) -->
-    <section class="section-padding" id="servicos">
+    <section class="section-padding services-section" id="servicos">
         <div class="container">
             <div class="section-header">
-                <h2>Serviços de Despachante em São Paulo</h2>
+                <h2 style="color: white;">Serviços de Despachante em São Paulo e Região</h2>
             </div>
-
             <div class="services-grid">
                 <!-- Card 1: Licenciamento -->
                 <div class="service-card">
                     <div class="card-icon"><i class="fas fa-file-contract"></i></div>
-                    <h3>Licenciamento 2026 SP</h3>
-                    <p style="margin-bottom: 20px;">Regularize o CRLV-e do seu veículo sem sair de casa. Liberação rápida do documento digital para circular tranquilo.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Consulta de débitos grátis</li>
-                        <li><i class="fas fa-check-circle"></i> Envio do PDF pelo WhatsApp</li>
+                    <h3 style="color: #ffffff; margin-bottom: 15px;">Licenciamento 2026 SP Online</h3>
+                    <p style="margin-bottom: 20px; color: #ffffff;">Emissão rápida do <strong>CRLV-e 2026</strong>. Consultamos seus débitos e regularizamos o licenciamento anual do seu veículo com entrega do documento via WhatsApp.</p>
+                    <ul style="list-style: none;">
+                        <li style="color: #ffffff; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Consulta de IPVA e Multas</li>
+                        <li style="color: #ffffff; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Documento Digital (PDF) no ato</li>
                     </ul>
                 </div>
 
                 <!-- Card 2: Transferência -->
                 <div class="service-card">
                     <div class="card-icon"><i class="fas fa-exchange-alt"></i></div>
-                    <h3>Transferência de Veículo</h3>
-                    <p style="margin-bottom: 20px;">Comprou ou vendeu um carro em São Paulo? Resolvemos a transferência de propriedade e emissão do ATPV-e.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Processo 100% digital</li>
-                        <li><i class="fas fa-check-circle"></i> Suporte total com a documentação</li>
+                    <h3 style="color: #ffffff; margin-bottom: 15px;">Transferência de Veículo SP</h3>
+                    <p style="margin-bottom: 20px; color: #ffffff;">Especialista em <strong>transferência de propriedade</strong> e emissão de ATPV-e em São Paulo. Resolvemos toda a burocracia digital para compradores e vendedores.</p>
+                    <ul style="list-style: none;">
+                        <li style="color: #ffffff; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Transferência Online Direta</li>
+                        <li style="color: #ffffff; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Comunicação de Venda Imediata</li>
                     </ul>
                 </div>
 
                 <!-- Card 3: CNH e Multas -->
                 <div class="service-card">
                     <div class="card-icon"><i class="fas fa-id-card"></i></div>
-                    <h3>CNH, Multas e IPVA</h3>
-                    <p style="margin-bottom: 20px;">Problemas com pontuação, IPVA atrasado ou multas? Regularizamos sua situação com parcelamento facilitado.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Defesa de CNH Suspensa</li>
-                        <li><i class="fas fa-check-circle"></i> Parcelamento em até 12x</li>
+                    <h3 style="color: #ffffff; margin-bottom: 15px;">CNH Suspensa e Multas</h3>
+                    <p style="margin-bottom: 20px; color: #ffffff;">Recursos para multas de bafômetro (Lei Seca) e <strong>regularização de CNH suspensa</strong> ou cassada em São Paulo. Defesa técnica e especializada.</p>
+                    <ul style="list-style: none;">
+                        <li style="color: #ffffff; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Parcelamento em até 12x</li>
+                        <li style="color: #ffffff; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: #22c55e;"></i> Baixa de pontuação e bloqueios</li>
                     </ul>
                 </div>
             </div>
@@ -495,16 +661,18 @@
             <div class="about-grid">
                 <div class="about-images">
                     <!-- Imagem Principal: Dirceu no Escritório -->
-                    <img src="dirceu-despachante-sp.jpg" alt="Dirceu Despachante em São Paulo" class="img-main">
+                    <img src="dirceu-despachante-sp.jpg" alt="Dirceu Despachante realizando atendimento de documentação veicular na Mooca São Paulo" title="Dirceu Despachante - Especialista Detran-SP" class="img-main">
                     <!-- Imagem Flutuante: Detalhe de Atendimento -->
-                    <img src="atendimento-dirceu-despachante.jpg" alt="Atendimento Despachante Dirceu" class="img-float" style="object-fit: cover; height: 200px;">
+                    <img src="atendimento-dirceu-despachante.jpg" alt="Regularização de licenciamento 2026 e transferência de veículo online" title="Atendimento Digital Dirceu Despachante" class="img-float" style="object-fit: cover; height: 200px;">
                 </div>
                 
                 <div class="about-text">
-                    <span style="color: var(--accent); font-weight: 700; text-transform: uppercase;">Experiência e Seriedade</span>
-                    <h2>O seu Despachante de confiança em São Paulo</h2>
-                    <p style="margin-bottom: 20px;">Com anos de atuação no mercado paulista, o <strong>Dirceu Despachante</strong> se especializou em descomplica a vida do motorista. Nosso foco é oferecer um serviço transparente, rápido e totalmente dentro da legalidade.</p>
-                    <p style="margin-bottom: 30px;">Entendemos que seu tempo é precioso. Por isso, utilizamos tecnologia de ponta para resolver pendências junto ao Detran-SP sem que você precise sair de casa ou enfrentar filas.</p>
+                    <span class="hero-badge" style="background: #fffbeb; border: 2px solid #fbbf24; color: #b45309; margin-bottom: 15px; font-weight: 800; letter-spacing: 0.5px; opacity: 1; display: inline-flex; align-items: center; gap: 8px;">
+    <i class="fas fa-shield-halved"></i> EXPERIÊNCIA E SERIEDADE
+</span>
+                    <h2>O seu Despachante na Mooca e em São Paulo</h2>
+                    <p style="margin-bottom: 20px;">Com sede estratégica na <strong>Mooca</strong> e anos de atuação no mercado paulista, o <strong>Dirceu Despachante</strong> é especialista em descomplicar a vida do motorista. Nosso foco é transparência, rapidez e total segurança jurídica em todos os processos.</p>
+                    <p style="margin-bottom: 30px;">Se você busca um <strong>despachante em São Paulo</strong> que utilize tecnologia de ponta para resolver pendências junto ao Detran-SP sem filas e com atendimento personalizado, você está no lugar certo.</p>
                     
                     <ul class="check-list">
                         <li><i class="fas fa-check"></i> Credenciamento oficial e seguro</li>
@@ -512,7 +680,100 @@
                         <li><i class="fas fa-check"></i> Suporte humanizado direto com quem entende</li>
                     </ul>
 
-                    <a href="https://wa.me/5511947512569" class="btn btn-primary" style="margin-top: 30px;">Falar direto com o Dirceu</a>
+                    <a href="https://wa.me/5511947512569?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20iniciar%20um%20atendimento." class="btn btn-primary" style="margin-top: 30px;">Falar direto com o Dirceu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BARRA DE TRUST & ESTATÍSTICAS (AUTORIDADE) -->
+    <div class="container stats-container">
+        <div class="stats-grid">
+            <!-- Item 1: Registro Oficial -->
+            <div class="stat-item">
+                <i class="fas fa-id-badge"></i>
+                <span class="stat-number" style="font-size: 1.2rem;">CRDD/SP</span>
+                <span class="stat-label">Registro nº 005953-6</span>
+            </div>
+            
+            <!-- Item 2: Volume de Atendimento -->
+            <div class="stat-item">
+                <i class="fas fa-check-double"></i>
+                <span class="stat-number">+10.000</span>
+                <span class="stat-label">Documentos Entregues</span>
+            </div>
+
+            <!-- Item 3: Parcelamento (Diferencial) -->
+            <div class="stat-item">
+                <i class="fas fa-credit-card"></i>
+                <span class="stat-number">12x</span>
+                <span class="stat-label">No Cartão de Crédito</span>
+            </div>
+
+            <!-- Item 4: Comodidade -->
+            <div class="stat-item">
+                <i class="fas fa-mobile-alt"></i>
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Processo Online e Seguro</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SESSÃO COMO FUNCIONA (PASSO A PASSO) -->
+    <section class="section-padding" id="como-funciona" style="background-color: #ffffff;">
+        <div class="container">
+            <div class="section-header">
+                <span class="hero-badge" style="background: #fffbeb; border: 2px solid #fbbf24; color: #b45309; margin-bottom: 20px; font-weight: 800; letter-spacing: 0.5px; opacity: 1; display: inline-flex; align-items: center; gap: 8px;">
+    <i class="fas fa-bolt"></i> SIMPLICIDADE TOTAL
+</span>
+                <h2>Sua documentação pronta em 4 passos</h2>
+                <p>O processo é 100% digital. Você não precisa sair de casa nem enfrentar filas.</p>
+            </div>
+
+            <!-- GRID AJUSTADA PARA FICAR MAIS PRÓXIMA NO WINDOWS -->
+            <div style="max-width: 700px; margin: 40px auto 0;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px 20px;">
+                    
+                    <!-- Passo 1 -->
+                    <div style="text-align: center; padding: 10px;">
+                        <div style="width: 70px; height: 70px; background: #fffbeb; color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 15px; position: relative; border: 2px dashed var(--accent);">
+                            <i class="fab fa-whatsapp"></i>
+                            <span style="position: absolute; top: 0; right: 0; background: var(--primary); color: white; width: 22px; height: 22px; border-radius: 50%; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; font-weight: 700;">1</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Contato Inicial</h3>
+                        <p style="font-size: 0.85rem; line-height: 1.3;">Clique no Botão e Envie uma foto do documento ou Renavam.</p>
+                    </div>
+
+                    <!-- Passo 2 -->
+                    <div style="text-align: center; padding: 10px;">
+                        <div style="width: 70px; height: 70px; background: #fffbeb; color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 15px; position: relative; border: 2px dashed var(--accent);">
+                            <i class="fas fa-search-dollar"></i>
+                            <span style="position: absolute; top: 0; right: 0; background: var(--primary); color: white; width: 22px; height: 22px; border-radius: 50%; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; font-weight: 700;">2</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Orçamento</h3>
+                        <p style="font-size: 0.85rem; line-height: 1.3;">Consultamos todos os débitos e enviamos o valor exato, com opção de parcelamento em 12x.</p>
+                    </div>
+
+                    <!-- Passo 3 -->
+                    <div style="text-align: center; padding: 10px;">
+                        <div style="width: 70px; height: 70px; background: #fffbeb; color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 15px; position: relative; border: 2px dashed var(--accent);">
+                            <i class="fas fa-user-check"></i>
+                            <span style="position: absolute; top: 0; right: 0; background: var(--primary); color: white; width: 22px; height: 22px; border-radius: 50%; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; font-weight: 700;">3</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Execução</h3>
+                        <p style="font-size: 0.85rem; line-height: 1.3;">Resolvemos tudo direto no sistema do Detran.</p>
+                    </div>
+
+                    <!-- Passo 4 -->
+                    <div style="text-align: center; padding: 10px;">
+                        <div style="width: 70px; height: 70px; background: #fffbeb; color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 15px; position: relative; border: 2px dashed var(--accent);">
+                            <i class="fas fa-file-invoice"></i>
+                            <span style="position: absolute; top: 0; right: 0; background: var(--primary); color: white; width: 22px; height: 22px; border-radius: 50%; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; font-weight: 700;">4</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Documento</h3>
+                        <p style="font-size: 0.85rem; line-height: 1.3;">Você recebe o PDF pronto no WhatsApp.</p>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -533,12 +794,62 @@
             
             <p style="margin-bottom: 30px; font-weight: 600; color: var(--accent);">Liberação imediata do documento após a contratação!</p>
 
-            <a href="https://wa.me/5511947512569" class="btn btn-primary" style="background: var(--accent); color: var(--primary);">
+            <a href="https://wa.me/5511947512569?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20iniciar%20um%20atendimento." class="btn btn-primary" style="background: var(--accent); color: var(--primary);">
                 <i class="fab fa-whatsapp"></i> Simular Parcelamento 2026
             </a>
         </div>
     </section>
 
+<!-- SESSÃO PROVA SOCIAL (PRINTS REAIS GOOGLE) -->
+    <section class="section-padding" id="avaliacoes" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="section-header">
+                <span class="hero-badge" style="background: #fffbeb; border: 2px solid #fbbf24; color: #b45309; margin-bottom: 20px; font-weight: 800; letter-spacing: 0.5px; opacity: 1; display: inline-flex; align-items: center; gap: 8px;">
+    <i class="fas fa-star"></i> EXCELÊNCIA COMPROVADA
+</span>
+                <h2 style="font-size: 2.2rem; margin-bottom: 15px;">O que dizem nossos clientes no Google</h2>
+                
+                <!-- Imagem do Score Geral -->
+                <div style="max-width: 250px; margin: 0 auto;">
+                    <img src="google-score.png" alt="Avaliação excelente no Google" style="width: 100%; height: auto;">
+                </div>
+            </div>
+
+            <!-- GRID RESPONSIVA (2 NO WINDOWS, 1 NO MOBILE) -->
+            <div style="max-width: 900px; margin: 40px auto 0;">
+                <div class="reviews-grid">
+                    
+                    <!-- Print 1 -->
+                    <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                        <img src="review-1.png" alt="Depoimento Cliente Dirceu Despachante" style="width: 100%; height: auto; display: block;">
+                    </div>
+
+                    <!-- Print 2 -->
+                    <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                        <img src="review-2.png" alt="Avaliação Google Dirceu Despachante" style="width: 100%; height: auto; display: block;">
+                    </div>
+
+                    <!-- Print 3 -->
+                    <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                        <img src="review-3.png" alt="Feedback Cliente Despachante SP" style="width: 100%; height: auto; display: block;">
+                    </div>
+
+                    <!-- Print 4 -->
+                    <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e2e8f0;">
+                        <img src="review-4.png" alt="Depoimento Atendimento Dirceu" style="width: 100%; height: auto; display: block;">
+                    </div>
+
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://wa.me/5511947512569?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20iniciar%20um%20atendimento." class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Quero ser atendido agora
+                </a>
+            </div>
+        </div>
+    </section>
+    
     <!-- FAQ (SEO & OBJEÇÕES) -->
     <section class="section-padding" id="faq">
         <div class="container">
@@ -590,7 +901,7 @@
 
             <div style="text-align: center; margin-top: 40px;">
                 <p>Ainda tem dúvidas? <strong>Chame o Dirceu agora.</strong></p>
-                <a href="https://wa.me/5511947512569" class="btn btn-primary" style="margin-top: 15px;">
+                <a href="https://wa.me/5511947512569?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20iniciar%20um%20atendimento." class="btn btn-primary" style="margin-top: 15px;">
                     <i class="fab fa-whatsapp"></i> Tirar Dúvida no WhatsApp
                 </a>
             </div>
@@ -843,7 +1154,7 @@
                         <a href="https://www.instagram.com/dirceu.despachante" target="_blank" style="width: 35px; height: 35px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; transition: 0.3s;">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/5511947512569" target="_blank" style="width: 35px; height: 35px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; transition: 0.3s;">
+                        <a href="https://wa.me/5511947512569?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20iniciar%20um%20atendimento." target="_blank" style="width: 35px; height: 35px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; transition: 0.3s;">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -902,7 +1213,7 @@
     </footer>
 
     <!-- WHATSAPP FLOAT -->
-    <a href="https://wa.me/5511947512569" target="_blank" class="whatsapp-float">
+    <a href="https://wa.me/5511947512569?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20iniciar%20um%20atendimento." target="_blank" class="whatsapp-float">
         <div class="pulse"></div>
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -919,11 +1230,11 @@
             if (navMenu.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
-                icon.style.color = 'var(--primary)';
+                icon.style.color = '#ffffff'; /* Mantém branco ao abrir */
             } else {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
-                icon.style.color = 'white';
+                icon.style.color = '#ffffff'; /* Mantém branco ao fechar */
             }
         });
 
