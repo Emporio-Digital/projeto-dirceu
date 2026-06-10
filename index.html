@@ -347,12 +347,34 @@
 
             /* CORREÇÃO DO CARD FLUTUANTE (Aqui está a mágica) */
             .stats-container { 
-                margin-top: 20px; /* Não sobe mais por cima da imagem */
+                margin-top: 20px; 
                 margin-bottom: 40px;
-                transform: none; /* Remove efeito 3D que causava problema */
+                transform: none; 
             }
+
+            /* MÁGICA DO GRID 2X2 NO MOBILE */
+            .stats-grid {
+                grid-template-columns: 1fr 1fr !important; /* Força 2 colunas */
+                padding: 25px 15px !important; /* Compacta o respiro interno */
+                gap: 20px 10px !important; /* Ajusta o espaço entre os cards */
+            }
+
+            .stat-item {
+                border: none !important; /* Remove bordas que sujam o visual */
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+
+            .stat-item i { font-size: 1.8rem !important; margin-bottom: 8px !important; }
+            .stat-number { font-size: 1.3rem !important; }
+            .stat-label { font-size: 0.75rem !important; line-height: 1.2; }
             
-            .img-float { width: 60%; bottom: -20px; }
+            .img-float { 
+                width: 55%; /* Reduzi levemente para aparecer mais o fundo */
+                bottom: -45px; /* Empurrei mais para baixo para dar o desnível */
+                right: 0;
+                border-width: 4px !important; /* Borda mais fina no mobile fica mais elegante */
+            }
         }
 
         /* --- ESTILO SESSÃO SEO MONSTRO --- */
