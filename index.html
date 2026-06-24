@@ -439,6 +439,50 @@
                 background-image: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.6)), url('fundo-servicos-mob.jpg') !important;
             }
         }
+
+        /* --- BLOCO DE NOVOS SERVIÇOS ADICIONADOS --- */
+        .solucoes-urgentes { background-color: var(--light-gray); padding: 40px 0 80px; }
+        
+        .card-urgente-master {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            border-left: 8px solid var(--accent);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .card-urgente-master i { font-size: 3.5rem; color: var(--accent); }
+        .card-urgente-master h3 { color: var(--accent); font-size: 1.8rem; margin-bottom: 10px; }
+        .card-urgente-master p { color: #e2e8f0; font-size: 1.1rem; font-weight: 600; }
+
+        .grid-extras { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        
+        .card-extra {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card-extra:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .card-extra i { color: var(--accent); font-size: 2rem; }
+        .card-extra h4 { font-size: 1.2rem; color: var(--primary); }
+        .card-extra span { color: var(--whatsapp); font-weight: 800; font-size: 0.9rem; text-transform: uppercase; }
+
+        @media (max-width: 768px) {
+            .card-urgente-master { flex-direction: column; text-align: center; padding: 30px 20px; }
+            .card-urgente-master i { font-size: 2.5rem; }
+            .card-urgente-master h3 { font-size: 1.4rem; }
+        }
     </style>
 
     <!-- JSON-LD SCHEMA (CÉREBRO DO SEO LOCAL) -->
@@ -799,6 +843,49 @@
 
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO ADICIONAL: SOLUÇÕES DE URGÊNCIA -->
+    <section class="solucoes-urgentes">
+        <div class="container">
+            
+            <!-- DESTAQUE PRINCIPAL: LIBERAÇÃO -->
+            <div class="card-urgente-master">
+                <i class="fas fa-truck-pickup"></i>
+                <div>
+                    <h3>LIBERAÇÃO IMEDIATA DE VEÍCULO</h3>
+                    <p>DER, POLÍCIA RODOVIÁRIA ESTADUAL E POLÍCIA ESTADUAL</p>
+                    <small style="color: #94a3b8; font-weight: 400;">Atuação rápida junto aos órgãos competentes para liberação de pátio.</small>
+                </div>
+            </div>
+
+            <div class="grid-extras">
+                <!-- ATPVe -->
+                <div class="card-extra">
+                    <i class="fas fa-fingerprint"></i>
+                    <span>Resolvo de imediato</span>
+                    <h4>ATPV-e (Autorização Eletrônica) com Erro na Biometria?</h4>
+                    <p style="font-size: 0.9rem;">Destrave o processo de transferência sem dor de cabeça e sem filas.</p>
+                </div>
+
+                <!-- Pesquisas -->
+                <div class="card-extra">
+                    <i class="fas fa-search-dollar"></i>
+                    <span>Rápida e Completa</span>
+                    <h4>Pesquisas de Débitos e Dívida Ativa</h4>
+                    <p style="font-size: 0.9rem;">Levantamento completo: Multas, RENAINF, Dívida Ativa e restrições financeiras.</p>
+                </div>
+
+                <!-- Leilão -->
+                <div class="card-extra">
+                    <i class="fas fa-gavel"></i>
+                    <span>Especialista Técnico</span>
+                    <h4>Desbloqueio de Veículos de Leilão</h4>
+                    <p style="font-size: 0.9rem;">Regularização de documentos e retirada de bloqueios administrativos de leiloeiros.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
